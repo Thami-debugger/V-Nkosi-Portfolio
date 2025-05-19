@@ -227,3 +227,227 @@ nav a:hover {
         width: 100%;
     }
 }
+/* About Me Section */
+.about-container {
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+}
+
+/* Profile Picture */
+.profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ffcc00;
+    margin-bottom: 15px;
+}
+
+/* Bio Section */
+.bio p {
+    font-size: 18px;
+    color: white;
+}
+
+.bio blockquote {
+    font-style: italic;
+    color: #ffcc00;
+}
+
+/* Details Section */
+.details {
+    text-align: left;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Skills & List Styling */
+.details h2 {
+    color: #ffcc00;
+}
+
+.details ul {
+    list-style-type: none;
+}
+
+.details li {
+    font-size: 16px;
+    color: white;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links .btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #ffcc00;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+.social-links .btn:hover {
+    background-color: #ff66b2;
+    color: white;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .profile img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Videos Section */
+.videos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+    margin: 30px auto;
+}
+
+/* Individual Video Cards */
+.video-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    width: 45%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Video Titles */
+.video-card h3 {
+    color: #ffcc00;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Hover Effect */
+.video-card:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .video-card {
+        width: 100%;
+    }
+}
+/* Hobbies Section */
+.hobbies-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+    margin: 30px auto;
+}
+
+/* Individual Hobby Cards */
+.hobby {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    width: 45%;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hobby Images */
+.hobby img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Hobby Titles */
+.hobby h3 {
+    color: #ffcc00;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Hover Effect */
+.hobby:hover {
+    transform: scale(1.05);
+}
+
+/* Buttons for Links */
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    color: black;
+    background-color: #ffcc00;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #ff66b2;
+    color: white;
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .hobby {
+        width: 100%;
+    }
+}
+/* Gallery Section */
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+    margin: 30px auto;
+}
+
+/* Individual Image Cards */
+.gallery-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    width: 30%;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Images */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Captions */
+.gallery-item p {
+    color: #ffcc00;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+/* Hover Effect */
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+/* Mobile Responsive */
+@media screen and (max-width: 768px) {
+    .gallery-item {
+        width: 100%;
+    }
+}
