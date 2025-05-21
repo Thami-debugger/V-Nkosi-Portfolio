@@ -451,3 +451,37 @@ nav a:hover {
         width: 100%;
     }
 }
+/* Form Styling */
+form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    margin: 20px auto;
+}
+
+/* Form Inputs */
+form input[type="hidden"] {
+    display: none; /* Hides hidden PayFast fields */
+}
+
+form button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #ffcc00;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+form button:hover {
+    background-color: #ff66b2;
+    color: white;
+}
