@@ -589,3 +589,60 @@ form button:hover {
         font-size: 14px;
     }
 }
+@media screen and (max-width: 600px) {
+  .quote-box {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  nav a {
+    display: block;
+    margin: 8px 0;
+    font-size: 16px;
+  }
+
+  .project, .book, .video-card, .hobby, .gallery-item {
+    width: 100%;
+  }
+
+  .assistant-section {
+    width: 95%;
+  }
+
+  #botContainer {
+    width: 100%;
+  }
+
+  .copilot-widget {
+    height: 400px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .tagline {
+    font-size: 1.1rem;
+  }
+
+  h2, h3 {
+    font-size: 1.2rem;
+  }
+
+  p {
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .btn {
+    font-size: 16px;
+    padding: 12px 18px;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .bot-close {
+    font-size: 22px;
+  }
+}
