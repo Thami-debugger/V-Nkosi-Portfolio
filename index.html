@@ -1,39 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velaphi’s Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velaphi’s Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <header class="hero">
-        <h1 class="title">Velaphi’s Portfolio</h1>
-        <p class="tagline">Welcome to my personal space where I document my journey!</p>
+  <header class="hero">
+    <h1 class="title">Velaphi’s Portfolio</h1>
+    <p class="tagline">Welcome to my personal space where I document my journey!</p>
 
-        <nav>
-            <a href="about.html">About Me</a>
-            <a href="projects.html">Projects</a>
-            <a href="books.html">Books Library</a>
-            <a href="videos.html">Videos</a>
-            <a href="cv.html">CV</a>
-            <a href="hobbies.html">Hobbies</a>
-            <a href="gallery.html">Gallery</a>
-        </nav>
+    <nav>
+      <a href="about.html">About Me</a>
+      <a href="projects.html">Projects</a>
+      <a href="books.html">Books Library</a>
+      <a href="videos.html">Videos</a>
+      <a href="cv.html">CV</a>
+      <a href="hobbies.html">Hobbies</a>
+      <a href="gallery.html">Gallery</a>
+    </nav>
 
-        <div id="quote-container">
-            <div class="quote-box">
-                <p id="quote-text1"></p>
-                <h4 id="quote-author1"></h4>
-            </div>
+    <!-- 💬 Meet the Bot Section -->
+    <section class="assistant-section">
+      <h2>💬 Meet VelaphiPortfolioBot</h2>
+      <p>I can help you explore the site, download books, learn about projects, and more!</p>
+      <button id="showBotBtn" class="btn">Talk to the Bot</button>
+    </section>
 
-            <div class="quote-box">
-                <p id="quote-text2"></p>
-                <h4 id="quote-author2"></h4>
-            </div>
-        </div>
-    </header>
+    <!-- 🔒 Hidden Assistant with Close Button -->
+    <div id="botContainer" class="bot-hidden">
+      <div class="bot-header">
+        <span>📡 VelaphiPortfolioBot</span>
+        <button id="closeBotBtn" class="bot-close">✖</button>
+      </div>
+      <iframe
+        id="botFrame"
+        src="https://copilotstudio.microsoft.com/environments/14734227-9115-e3f8-9a55-78a539c59f11/bots/crb1c_velaphiPortfolioBot/webchat?__version__=2"
+        class="copilot-widget"
+        allow="microphone">
+      </iframe>
+    </div>
 
-    <script src="script.js"></script>
+    <!-- ✨ Quotes Section -->
+    <div id="quote-container">
+      <div class="quote-box">
+        <p id="quote-text1"></p>
+        <h4 id="quote-author1"></h4>
+      </div>
+
+      <div class="quote-box">
+        <p id="quote-text2"></p>
+        <h4 id="quote-author2"></h4>
+      </div>
+    </div>
+  </header>
+
+  <!-- 🔧 Bot Control Script -->
+  <script>
+    const showBotBtn = document.getElementById("showBotBtn");
+    const closeBotBtn = document.getElementById("closeBotBtn");
+    const botContainer = document.getElementById("botContainer");
+
+    showBotBtn.addEventListener("click", () => {
+      botContainer.classList.add("bot-visible");
+    });
+
+    closeBotBtn.addEventListener("click", () => {
+      botContainer.classList.remove("bot-visible");
+    });
+  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>

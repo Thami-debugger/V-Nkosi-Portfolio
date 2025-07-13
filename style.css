@@ -485,3 +485,107 @@ form button:hover {
     background-color: #ff66b2;
     color: white;
 }
+/* 🧠 VelaphiPortfolioBot Widget */
+#botContainer {
+    display: none;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(255, 204, 0, 0.3);
+}
+
+#botContainer.bot-visible {
+    display: block;
+}
+
+/* Bot Header with ✖ Close Button */
+.bot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+
+.bot-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+}
+
+.bot-close:hover {
+    color: #ff66b2;
+}
+
+/* Copilot Widget Frame */
+.copilot-widget {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Assistant Intro Section */
+.assistant-section {
+    margin: 40px auto 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    width: 80%;
+    text-align: center;
+}
+
+.assistant-section h2 {
+    color: #ffcc00;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.assistant-section p {
+    color: white;
+    font-size: 16px;
+}
+
+.assistant-section .btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ffcc00;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.assistant-section .btn:hover {
+    background-color: #ff66b2;
+    color: white;
+}
+
+/* 📱 Responsive Bot Adjustments */
+@media screen and (max-width: 768px) {
+    #botContainer {
+        width: 100%;
+    }
+
+    .copilot-widget {
+        height: 400px;
+    }
+
+    .assistant-section h2 {
+        font-size: 20px;
+    }
+
+    .assistant-section p {
+        font-size: 14px;
+    }
+}
