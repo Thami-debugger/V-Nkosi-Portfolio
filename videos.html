@@ -1,6 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+            <style>
+                .video-thumb-link {
+                    display: block;
+                    position: relative;
+                    width: 100%;
+                    max-width: 480px;
+                    margin: 0 auto 10px auto;
+                    border-radius: 16px;
+                    overflow: hidden;
+                    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+                    background: #000;
+                }
+                .video-thumb-link img {
+                    width: 100%;
+                    display: block;
+                }
+                .play-btn {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 64px;
+                    height: 64px;
+                    background: rgba(0,0,0,0.6);
+                    border-radius: 50%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .play-btn svg {
+                    width: 36px;
+                    height: 36px;
+                    fill: #00ff99;
+                }
+            </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Videos I’ve Watched | Velaphi</title>
@@ -13,35 +48,59 @@
     </header>
 
     <section class="videos-container">
-        <div class="video-card">
-            <h3>Jim Rohn – Success & Personal Development</h3>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/Mres4xDThPg" allowfullscreen></iframe>
-        </div>
+                <div class="video-card">
+                        <h3>Jim Rohn – Success & Personal Development</h3>
+                        <a class="video-thumb-link" href="https://youtu.be/Mres4xDThPg" target="_blank" rel="noopener" title="Watch on YouTube">
+                            <img src="https://img.youtube.com/vi/Mres4xDThPg/hqdefault.jpg" alt="Jim Rohn – Success & Personal Development thumbnail">
+                            <span class="play-btn"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.3)"/><polygon points="26,20 50,32 26,44"/></svg></span>
+                        </a>
+                        <div style="font-size:0.95rem;margin-top:6px;"><a href="https://youtu.be/Mres4xDThPg" target="_blank" rel="noopener" style="color:#00ff99;">Watch on YouTube</a></div>
+                </div>
 
-        <div class="video-card">
-            <h3>The Lifting Power of True Humility</h3>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/mnETeT6AZqY" allowfullscreen></iframe>
-        </div>
+                <div class="video-card">
+                        <h3>The Lifting Power of True Humility</h3>
+                        <a class="video-thumb-link" href="https://youtu.be/mnETeT6AZqY" target="_blank" rel="noopener" title="Watch on YouTube">
+                            <img src="https://img.youtube.com/vi/mnETeT6AZqY/hqdefault.jpg" alt="The Lifting Power of True Humility thumbnail">
+                            <span class="play-btn"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.3)"/><polygon points="26,20 50,32 26,44"/></svg></span>
+                        </a>
+                        <div style="font-size:0.95rem;margin-top:6px;"><a href="https://youtu.be/mnETeT6AZqY" target="_blank" rel="noopener" style="color:#00ff99;">Watch on YouTube</a></div>
+                </div>
 
-        <div class="video-card">
-            <h3>Price for New Dimensions</h3>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/sEnPV8ptcIE" allowfullscreen></iframe>
-        </div>
+                <div class="video-card">
+                        <h3>Price for New Dimensions</h3>
+                        <a class="video-thumb-link" href="https://youtu.be/sEnPV8ptcIE" target="_blank" rel="noopener" title="Watch on YouTube">
+                            <img src="https://img.youtube.com/vi/sEnPV8ptcIE/hqdefault.jpg" alt="Price for New Dimensions thumbnail">
+                            <span class="play-btn"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.3)"/><polygon points="26,20 50,32 26,44"/></svg></span>
+                        </a>
+                        <div style="font-size:0.95rem;margin-top:6px;"><a href="https://youtu.be/sEnPV8ptcIE" target="_blank" rel="noopener" style="color:#00ff99;">Watch on YouTube</a></div>
+                </div>
 
-        <div class="video-card">
-            <h3>The Seeing Eyes</h3>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/sRUnQreDv1g" allowfullscreen></iframe>
-        </div>
+                <div class="video-card">
+                        <h3>The Seeing Eyes</h3>
+                        <a class="video-thumb-link" href="https://youtu.be/sRUnQreDv1g" target="_blank" rel="noopener" title="Watch on YouTube">
+                            <img src="https://img.youtube.com/vi/sRUnQreDv1g/hqdefault.jpg" alt="The Seeing Eyes thumbnail">
+                            <span class="play-btn"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.3)"/><polygon points="26,20 50,32 26,44"/></svg></span>
+                        </a>
+                        <div style="font-size:0.95rem;margin-top:6px;"><a href="https://youtu.be/sRUnQreDv1g" target="_blank" rel="noopener" style="color:#00ff99;">Watch on YouTube</a></div>
+                </div>
 
-        <div class="video-card">
-            <h3>Grace Called Favor</h3>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/1F_nfBYYoco" allowfullscreen></iframe>
-        </div>
+                <div class="video-card">
+                        <h3>Grace Called Favor</h3>
+                        <a class="video-thumb-link" href="https://youtu.be/1F_nfBYYoco" target="_blank" rel="noopener" title="Watch on YouTube">
+                            <img src="https://img.youtube.com/vi/1F_nfBYYoco/hqdefault.jpg" alt="Grace Called Favor thumbnail">
+                            <span class="play-btn"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.3)"/><polygon points="26,20 50,32 26,44"/></svg></span>
+                        </a>
+                        <div style="font-size:0.95rem;margin-top:6px;"><a href="https://youtu.be/1F_nfBYYoco" target="_blank" rel="noopener" style="color:#00ff99;">Watch on YouTube</a></div>
+                </div>
 
-        <div class="video-card">
-            <h3>The Value of Encounters</h3>
-            <iframe width="100%" height="315" src="https://www.youtube.com/embed/0Sbw6hDAnOs" allowfullscreen></iframe>
-        </div>
+                <div class="video-card">
+                        <h3>The Value of Encounters</h3>
+                        <a class="video-thumb-link" href="https://youtu.be/0Sbw6hDAnOs" target="_blank" rel="noopener" title="Watch on YouTube">
+                            <img src="https://img.youtube.com/vi/0Sbw6hDAnOs/hqdefault.jpg" alt="The Value of Encounters thumbnail">
+                            <span class="play-btn"><svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="32" fill="rgba(0,0,0,0.3)"/><polygon points="26,20 50,32 26,44"/></svg></span>
+                        </a>
+                        <div style="font-size:0.95rem;margin-top:6px;"><a href="https://youtu.be/0Sbw6hDAnOs" target="_blank" rel="noopener" style="color:#00ff99;">Watch on YouTube</a></div>
+                </div>
     </section>
      <br>
     <a href="index.html" class="btn"> back</a>

@@ -1,77 +1,711 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+      html, body {
+        max-width: 100vw;
+        overflow-x: hidden;
+      }
+      #botContainer {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 350px;
+        max-width: 90vw;
+        z-index: 1000;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        border-radius: 20px;
+        overflow: hidden;
+        background: #222;
+      }
+      #showBotBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 999;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        font-size: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+      }
+      #closeBotBtn {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        background: none;
+        border: none;
+        font-size: 2rem;
+        color: #fff;
+        z-index: 1001;
+        cursor: pointer;
+      }
+      .copilot-widget {
+        width: 100%;
+        height: 500px;
+        border: none;
+        border-radius: 0 0 20px 20px;
+        background: #222;
+      }
+    </style>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Velaphi’s Portfolio</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Velaphi Thamsanqa Nkosi - Portfolio of a web developer, data analyst, and innovator from Johannesburg, South Africa. Explore projects, books, videos, CV, and more." />
+  <meta name="keywords" content="Velaphi Nkosi, web developer, data analyst, Johannesburg, South Africa, portfolio, projects, books, videos, CV, innovation, data science, AI, technology, personal growth" />
+  <meta name="author" content="Velaphi Thamsanqa Nkosi" />
+  <meta property="og:title" content="Velaphi’s Portfolio" />
+  <meta property="og:description" content="Portfolio of Velaphi Thamsanqa Nkosi: web developer, data analyst, innovator. Explore projects, books, videos, and more." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://velaphinkosi.co.za/" />
+  <meta property="og:image" content="https://velaphinkosi.co.za/assets/ye.JPG" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Velaphi’s Portfolio" />
+  <meta name="twitter:description" content="Portfolio of Velaphi Thamsanqa Nkosi: web developer, data analyst, innovator. Explore projects, books, videos, and more." />
+  <meta name="twitter:image" content="https://velaphinkosi.co.za/assets/ye.JPG" />
+  <link rel="canonical" href="https://velaphinkosi.co.za/" />
+  <!-- Structured Data for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Velaphi Thamsanqa Nkosi",
+    "url": "https://velaphinkosi.co.za/",
+    "image": "https://velaphinkosi.co.za/assets/ye.JPG",
+    "sameAs": [
+      "https://linkedin.com/in/velaphi-nkosi-03b6621a9",
+      "https://github.com/Thami-debugger"
+    ],
+    "jobTitle": "Web Developer & Data Analyst",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Johannesburg",
+      "addressCountry": "South Africa"
+    },
+    "description": "Portfolio of Velaphi Thamsanqa Nkosi: web developer, data analyst, innovator. Explore projects, books, videos, and more."
+  }
+  </script>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #111;
+      color: #eee;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 4rem;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      margin: 10px 0 30px;
+    }
+    .btn {
+      padding: 10px 20px;
+      background: #00ff99;
+      color: #111;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    section {
+      padding: 100px 20px;
+    }
+  </style>
 </head>
 <body>
+  <div id="particles-js"></div>
   <header class="hero">
-    <h1 class="title">Velaphi’s Portfolio</h1>
-    <p class="tagline">Welcome to my personal space where I document my journey!</p>
-
+    <h1 class="title" style="font-size:clamp(2.2rem,7vw,3.5rem);color:#00ff99;margin-bottom:0.5rem;">Velaphi's Portfolio</h1>
+    <p class="tagline" style="font-size:clamp(1.1rem,3.5vw,1.5rem);font-weight:600;color:#00ff99;margin:0 0 1.5rem 0;">This is my portfolio where I document my journey!</p>
+    <style>
+      @media (max-width: 600px) {
+        .hero .title {
+          font-size: 2rem !important;
+        }
+        .hero .tagline {
+          font-size: 1rem !important;
+        }
+        nav {
+          padding: 12px 8px !important;
+          gap: 8px !important;
+        }
+      }
+    </style>
     <nav>
-      <a href="about.html">About Me</a>
-      <a href="projects.html">Projects</a>
-      <a href="books.html">Books Library</a>
-      <a href="videos.html">Videos</a>
-      <a href="cv.html">CV</a>
-      <a href="hobbies.html">Hobbies</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="certificates.html">Certificates</a>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#books">Books Library</a>
+      <a href="#videos">Videos</a>
+      <a href="#cv">CV</a>
+      <a href="#hobbies">Hobbies</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#certificates">Certificates</a>
     </nav>
-
-    <!-- 💬 Meet the Bot Section -->
-    <section class="assistant-section">
-      <h2>💬 Meet VelaphiPortfolioBot</h2>
-      <p>I can help you explore the site, download books, learn about projects, and more!</p>
-      <button id="showBotBtn" class="btn">Talk to the Bot</button>
-    </section>
-
-    <!-- 🔒 Hidden Assistant with Close Button -->
-    <div id="botContainer" class="bot-hidden">
-      <div class="bot-header">
-        <span>📡 VelaphiPortfolioBot</span>
-        <button id="closeBotBtn" class="bot-close">✖</button>
-      </div>
-      <iframe
-        id="botFrame"
-        src="https://copilotstudio.microsoft.com/environments/14734227-9115-e3f8-9a55-78a539c59f11/bots/crb1c_velaphiPortfolioBot/webchat?__version__=2"
-        class="copilot-widget"
-        allow="microphone">
-      </iframe>
-    </div>
-
-    <!-- ✨ Quotes Section -->
-    <div id="quote-container">
-      <div class="quote-box">
-        <p id="quote-text1"></p>
-        <h4 id="quote-author1"></h4>
-      </div>
-
-      <div class="quote-box">
-        <p id="quote-text2"></p>
-        <h4 id="quote-author2"></h4>
-      </div>
-    </div>
   </header>
 
-  <!-- 🔧 Bot Control Script -->
-  <script>
-    const showBotBtn = document.getElementById("showBotBtn");
-    const closeBotBtn = document.getElementById("closeBotBtn");
-    const botContainer = document.getElementById("botContainer");
+  <section id="about" class="about-container">
+    <div class="profile-summary">
+      <img src="assets/ye.JPG" alt="Velaphi Thamsanqa Nkosi" class="profile-pic-large" />
+      <div>
+        <div class="bio">
+          <h2 style="margin-top:0; color:#00ff99;">Velaphi Thamsanqa Nkosi</h2>
+          <p style="font-size:1.1rem;">I am an analytical, tech-driven professional specializing in data science, with expertise in Python, Microsoft Power Platform, Power BI, and Excel. Passionate about transforming data into impactful solutions, I am eager to contribute to innovative, fast-paced environments.</p>
+          <blockquote>“Your passion is your power—build something meaningful.”</blockquote>
+        </div>
+        <div class="details">
+          <h3>📍 Based in Johannesburg, South Africa</h3>
+          <ul>
+            <li><strong>Email:</strong> <a href="mailto:nkosivelaphi81@gmail.com">nkosivelaphi81@gmail.com</a></li>
+            <li><strong>Phone:</strong> <a href="tel:+27818232670">081 823 2670</a> / <a href="tel:+27832115775">083 211 5775</a></li>
+            <li><strong>Portfolio:</strong> <a href="https://v-nkosi-portfolio.onrender.com" target="_blank">v-nkosi-portfolio.onrender.com</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/Thami-debugger" target="_blank">github.com/Thami-debugger</a></li>
+          </ul>
+          <h3>🎓 Education</h3>
+          <ul>
+            <li><strong>Postgraduate Diploma in Data Science</strong>, University of Witwatersrand (2025)</li>
+            <li><strong>Postgraduate Diploma in Science Innovation and Entrepreneurship</strong>, University of Witwatersrand (2024, Distinction)</li>
+            <li><strong>Bachelor of Science in Biological Science</strong>, University of Witwatersrand (2020–2023)</li>
+          </ul>
+          <h3>📜 Certificates</h3>
+          <ul>
+            <li>Computer Science Diploma</li>
+            <li>Data Fundamentals Certificate</li>
+            <li>Fundamentals of Data Analysis using Power BI</li>
+            <li>Artificial Intelligence Fundamentals</li>
+            <li>Cybersecurity Fundamentals Certificate</li>
+            <li>Fundamentals of Sustainability and Technology</li>
+          </ul>
+          <h3>🤝 Volunteering & Leadership</h3>
+          <ul>
+            <li><strong>Development Team Member</strong> – DevSoc, University of Witwatersrand (2025): Building and maintaining DevSoc's website and digital tools, collaborating to drive innovation in the student tech community.</li>
+            <li><strong>First Year Experience Mentor</strong> (2025): Mentoring first-year students, supporting their academic transition, personal development, and leadership growth.</li>
+            <li><strong>Student Assistant</strong> (2025): Assisted 1,200+ students weekly, managing high-volume registration inquiries and handling up to 100 students at once during peak hours.</li>
+            <li><strong>Volunteer</strong> (2024): Managed logistical aspects of food distribution, strengthening organizational and teamwork skills.</li>
+          </ul>
+          <h3>💡 Skills</h3>
+          <ul>
+            <li>Python, Power BI, Microsoft Power Platform, Excel</li>
+            <li>Web Development (HTML, CSS, JavaScript)</li>
+            <li>Data Analysis & Machine Learning</li>
+            <li>Problem Solving & Critical Thinking</li>
+            <li>Teamwork & Collaboration</li>
+            <li>Adaptability & Continuous Learning</li>
+            <li>Time Management & Accountability</li>
+            <li>Emotional Intelligence & Empathy</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Bot Widget -->
+  <div id="botContainer">
+    <div style="background:#00ff99; color:#111; font-weight:700; font-size:1.1rem; padding:14px 48px 14px 20px; position:relative; border-radius:20px 20px 0 0; text-align:left;">
+      Velaphi Portfolio Chatbot
+      <button id="closeBotBtn" style="position:absolute;top:8px;right:12px;background:none;border:none;font-size:2rem;color:#111;z-index:1001;cursor:pointer;">&times;</button>
+    </div>
+    <iframe
+      id="botFrame"
+      src="https://copilotstudio.microsoft.com/environments/14734227-9115-e3f8-9a55-78a539c59f11/bots/crb1c_velaphiPortfolioBot/webchat?__version__=2"
+      class="copilot-widget"
+      allow="microphone">
+    </iframe>
+  </div>
+  <button id="showBotBtn" class="btn" title="Chatbot" aria-label="Chatbot" style="display:flex;align-items:center;gap:10px;">
+    <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="14" fill="#00ff99" stroke="#111" stroke-width="2"/>
+      <rect x="9" y="13" width="14" height="8" rx="4" fill="#fff" stroke="#111" stroke-width="1.5"/>
+      <circle cx="13" cy="17" r="1.2" fill="#111"/>
+      <circle cx="19" cy="17" r="1.2" fill="#111"/>
+      <rect x="14.5" y="19.5" width="3" height="1" rx="0.5" fill="#111"/>
+      <rect x="13.5" y="8" width="5" height="3" rx="1.5" fill="#fff" stroke="#111" stroke-width="1"/>
+    </svg>
+  </button>
 
-    showBotBtn.addEventListener("click", () => {
-      botContainer.classList.add("bot-visible");
+  <section id="projects">
+    <h1>My Projects</h1>
+    <section class="project">
+      <h2>Applynova</h2>
+      <p>A platform that automates the process of applying for jobs via email.</p>
+      <a href="https://applynova.co.za/" class="btn">View website</a>
+      <a href="https://youtu.be/h1FfQX8uRi4?si=gEgkkU5rlyiD3HE4" class="btn">View video</a>
+      <a href="https://drive.google.com/file/d/1UDmhem3mSDRR67kasCZqRVmBucrjMQHT/view?usp=sharing" class="btn">Listen to Ai podscast discussion of applynova</a>
+    </section>
+    <section class="project">
+        <h2>Bitcoin Predicting Model</h2>
+        <p>A machine learning model predicting Bitcoin price fluctuations.</p>
+        <a href="https://bb-kn4h.onrender.com" class="btn">View Project</a>
+    </section>
+    <section class="project">
+        <h2>Queue Management System</h2>
+        <p>Developed a queue management system using data analysis to improve service delivery and operational efficiency.</p>
+        <p>Automated tasks using Python and deployed on Render.</p>
+        <a href="https://wcco.onrender.com" class="btn">View Project</a>
+    </section>
+    <section class="project">
+        <h2>DataClean Pro</h2>
+        <p>Clean, analyze, and visualize data effortlessly with AI-powered insights.</p>
+        <a href="https://streamlit-data-analysis.onrender.com" class="btn">View Project</a>
+    </section>
+    <section class="project">
+        <h2>Word of the Day App</h2>
+        <p>A simple app that fetches and displays a new word daily to enhance vocabulary.</p>
+        <a href="https://word-of-the-day-vclq.onrender.com" class="btn">View Project</a>
+    </section>
+    <section class="project">
+        <h2>Productivity-Tracker</h2>
+        <p>A task management web app built for better productivity.</p>
+        <a href="https://productivity-tracker-vd37.onrender.com" class="btn">View Project</a>
+    </section>
+    <section class="project">
+        <h2>Microsoft Power Apps Challenge</h2>
+        <p>Used Power Automate, Canvas, Model-Driven, Power BI integration</p>
+        <a href="https://drive.google.com/file/d/1J78myXCEjj-ie93XdTxFwZEPkCZ8CbZ6/view?usp=drive_link" class="btn">View video</a>
+    </section>
+    <section class="project">
+        <h2>My Trading Bot</h2>
+        <p>A trading bot built using various algorithms and strategies.</p>
+        <a href="https://drive.google.com/file/d/1n2D2P3f2QtFsJfFnELCra5xfkNW5VJ4y/view?usp=sharing" class="btn">View video</a>
+    </section>
+  </section>
+
+  <section id="books" class="books-container">
+    <header>
+        <h1>📖 My Books Library</h1>
+        <p>Here are some insightful books that have shaped my thinking!</p>
+    </header>
+    <div class="book">
+        <h3>The Power of Now</h3>
+        <p>Teaches that peace comes from living fully in the present.</p>
+        <a href="assets/books/6584522-EckhartTolle-ThePowerOfNow.pdf" download class="btn">Download Book</a>
+         <p>⭐ Rating: 4.5/5</p>
+    </div>
+    <div class="book">
+        <h3>Atomic Habits</h3>
+        <p>Shows how small, consistent changes lead to remarkable personal growth.</p>
+        <a href="assets/books/Atomic Habits James Clear.pdf" download class="btn">Download Book</a>
+        <p>⭐ Rating: 4.5/5</p>
+    </div>
+    <div class="book">
+        <h3>Broke Millennial</h3>
+         <p>Helps young adults manage their money and build lasting wealth.</p>
+         <a href="assets/books/Broke Millennial_ Stop Scraping by and Get Your Financial Life Together ( PDFDrive ).pdf" download class="btn">Download Book</a>
+         <p>⭐ Rating: 4.5/5</p>
+    </div>
+    <div class="book">
+        <h3>How To Win Friends and Influence People</h3>
+        <p>Teaches lasting strategies to enhance communication and strengthen relationships.</p>
+        <a href="assets/books/How To Win Friends and Influence People ( PDFDrive ).pdf" download class="btn">Download Book</a>
+        <p>⭐ Rating: 4.5/5</p>
+    </div>
+    <div class="book">
+        <h3>See You at the Top</h3>
+        <p>Promotes personal growth and success via self-belief, goal setting, and positivity.</p>
+        <a href="assets/books/See You at the Top Formerly Entitled Biscuits, Fleas, and Pump Handles ( PDFDrive ).pdf" download class="btn">Download Book</a>
+        <p>⭐ Rating: 4.5/5</p>
+    </div>
+    <div class="book">
+        <h3>The 5AM CLUB </h3>
+        <p>PAdvocates rising early to boost productivity, focus, and growth.</p>
+        <a href="assets/books/The 5AM CLUB ( PDFDrive ).pdf" download class="btn">Download Book</a>
+        <p>⭐ Rating: 4.5/5</p>
+    </div>
+    <div class="book">
+        <h3>The 7 Habits of Highly Effective People</h3>
+        <p>Teaches character-based habits for personal and professional success.</p>
+        <a href="assets/books/7-Habits.pdf" download class="btn">Download Book</a>
+        <form action="https://www.payfast.co.za/eng/process" method="POST">
+            <input type="hidden" name="merchant_id" value="30190175">
+            <input type="hidden" name="merchant_key" value="w8s8ndvwk7qld">
+            <input type="hidden" name="amount" value="20.00">
+            <input type="hidden" name="item_name" value="7-Habits-Summary.docx">
+            <input type="hidden" name="return_url" value="https://v-nkosi-portfolio.onrender.com/success.html">
+            <input type="hidden" name="cancel_url" value="https://v-nkosi-portfolio.onrender.com/cancel.html">
+            <input type="hidden" name="notify_url" value="https://v-nkosi-portfolio.onrender.com/notify.html">
+            <button type="submit" class="btn">📝 Buy Summary for R20</button>
+        </form>
+        <p>⭐ Rating: 4.5/5</p>
+    </div>
+    <div class="book">
+        <h3>The 48 Laws of Power </h3>
+        <p>Reveals strategies for gaining and maintaining influence in social and professional life.</p>
+         <a href="assets/books/The 48 Laws of Power ( PDFDrive ).pdf" download class="btn">Download Book</a>
+        <p>⭐ Rating: 4.5/5</p>
+    </div>
+    <div class="book">
+        <h3>The Richest Man In Babylon </h3>
+        <p>Shares timeless financial wisdom through parables about saving, investing, and building wealth.</p>
+        <a href="assets/books/The Richest Man In Babylon ( PDFDrive ).pdf" download class="btn">Download Book</a>
+        <form action="https://www.payfast.co.za/eng/process" method="POST">
+                <input type="hidden" name="merchant_id" value="30190175">
+                <input type="hidden" name="merchant_key" value="w8s8ndvwk7qld">
+                <input type="hidden" name="amount" value="20.00">
+                <input type="hidden" name="item_name" value="Richest Man Summary">
+                <input type="hidden" name="return_url" value="https://v-nkosi-portfolio.onrender.com/success-richest.html">
+                <input type="hidden" name="cancel_url" value="https://v-nkosi-portfolio.onrender.com/cancel.html">
+                <input type="hidden" name="notify_url" value="https://v-nkosi-portfolio.onrender.com/notify.html">
+                <button type="submit" class="btn">📝 Buy Summary for R20</button>
+         </form>
+        <p>⭐ Rating: 5/5</p>
+    </div>
+    <div class="book">
+        <h3>The-lessons-of-history</h3>
+        <p>Distills key patterns of civilization to reveal timeless insights about human nature and society.</p>
+        <a href="assets/books/The-lessons-of-history.pdf" download class="btn">Download Book</a>
+        <form action="https://www.payfast.co.za/eng/process" method="POST">
+                <input type="hidden" name="merchant_id" value="30190175">
+                <input type="hidden" name="merchant_key" value="w8s8ndvwk7qld">
+                <input type="hidden" name="amount" value="20.00">
+                <input type="hidden" name="item_name" value="Lessons of History Summary">
+                <input type="hidden" name="return_url" value="https://v-nkosi-portfolio.onrender.com/success-lessons.html">
+                <input type="hidden" name="cancel_url" value="https://v-nkosi-portfolio.onrender.com/cancel.html">
+                <input type="hidden" name="notify_url" value="https://v-nkosi-portfolio.onrender.com/notify.html">
+                <button type="submit" class="btn">📝 Buy Summary for R20</button>
+        </form>
+        <p>⭐ Rating: 4.5/5</p>
+    </div>
+    <div class="book">
+        <h3>The-subtle-art-of-not-giving-a-fuck </h3>
+         <p>Advocates focusing on what matters by embracing struggles and setting better goals.</p>
+         <a href="assets/books/the-subtle-art-of-not-giving-a-fuck ( PDFDrive )_230303_000903.pdf" download class="btn">Download Book</a>
+          <p>⭐ Rating: 4.5/5</p>
+    </div>
+    <div class="book">
+        <h3>Think And Grow Rich </h3>
+         <p>Highlights the power of thoughts, belief, and persistence in achieving success.</p>
+          <a href="assets/books/Think And Grow Rich ( PDFDrive ).pdf" download class="btn">Download Book</a>
+          <p>⭐ Rating: 4.5/5</p>
+    </div>
+  </section>
+
+  <section id="videos" class="videos-container">
+    <header>
+        <h1>📽️ Videos I’ve Watched</h1>
+        <p>Here are some inspiring videos that have shaped my learning and thinking.</p>
+    </header>
+    <div class="video-card">
+        <h3>Jim Rohn – Success & Personal Development</h3>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/Mres4xDThPg" allowfullscreen></iframe>
+    </div>
+    <div class="video-card">
+        <h3>The Lifting Power of True Humility</h3>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/mnETeT6AZqY" allowfullscreen></iframe>
+    </div>
+    <div class="video-card">
+        <h3>Price for New Dimensions</h3>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/sEnPV8ptcIE" allowfullscreen></iframe>
+    </div>
+    <div class="video-card">
+        <h3>The Seeing Eyes</h3>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/sRUnQreDv1g" allowfullscreen></iframe>
+    </div>
+    <div class="video-card">
+        <h3>Grace Called Favor</h3>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/1F_nfBYYoco" allowfullscreen></iframe>
+    </div>
+    <div class="video-card">
+        <h3>The Value of Encounters</h3>
+        <iframe width="100%" height="315" src="https://www.youtube.com/embed/0Sbw6hDAnOs" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <section id="cv" class="cv-container">
+    <header>
+        <h1>📄 My CV</h1>
+        <p>Here is an overview of my professional experience and skills.</p>
+    </header>
+    <div class="cv-preview">
+        <iframe src="assets/Velaphi-CV.pdf" width="100%" height="500px"></iframe>
+    </div>
+    <div class="cv-info">
+        <h2>👨‍💻 Skills</h2>
+        <ul>
+            <li>Web Development (HTML, CSS, JavaScript, Python)</li>
+            <li>Data Analysis & Machine Learning</li>
+            <li>Problem-Solving & Critical Thinking</li>
+            <li>Project Management & Team Collaboration</li>
+        </ul>
+        <h2>🎓 Education</h2>
+        <p>Postgraduate Diploma in Data Science (2025) -  University of Wiwatersrand</p>
+        <p>Postgraduate Diploma in SCience Innovation and Entrepreneurship (2024) -  University of Wiwatersrand</p>
+        <p>Bachelor of Biological Sciences (2020-2023) - University of Wiwatersrand</p>
+        <h2>Contact: 0818232670</h2>
+        <p>Email: nkosivelaphi81@gmail.comes</p>
+        <p>LinkedIn: <a href="https://linkedin.com/in/velaphi-nkosi-03b6621a9" target="_blank">View LinkedIn</a></p>
+    </div>
+    <div class="cv-download">
+        <a href="assets/Velaphi-CV.pdf" download class="btn">Download CV</a>
+    </div>
+  </section>
+
+  <section id="hobbies" class="hobbies-container">
+    <header>
+        <h1>🚀 My Hobbies</h1>
+        <p>Here are some of my favorite activities that keep me inspired and energized.</p>
+    </header>
+    <div class="hobby">
+        <img src="assets/pics/jog crew.jpg" alt="Jogging">
+        <h3>🏃 Jogging</h3>
+        <p>I enjoy jogging to clear my mind and stay fit. Running in the mornings is refreshing and helps me start the day with energy!</p>
+    </div>
+    <div class="hobby">
+        <img src="assets/pics/dev team.jpg" alt="Coding">
+        <h3>💻 Coding</h3>
+        <p>Building projects, solving problems, and creating new ideas—coding is both a passion and a skill for me.</p>
+    </div>
+    <div class="hobby">
+        <img src="assets/pics/grad.jpg" alt="Reading">
+        <h3>📚 Reading Books</h3>
+        <p>I love diving into books on self-improvement, history, and technology. A good book can change the way you see the world.</p>
+        <a href="#books" class="btn">Explore My Bookshelf</a>
+    </div>
+    <div class="hobby">
+        <img src="assets/pics/nature.jpg" alt="Searching">
+        <h3>🔎 Searching & Research</h3>
+        <p>I'm naturally curious! Whether it's deep-diving into tech trends or learning something new, I enjoy discovering fresh insights.</p>
+    </div>
+    <div class="hobby">
+        <img src="assets/pics/20160304132547-jim-rohn.webp" alt="Watching Inspirational Videos">
+        <h3>🎥 Watching Inspirational Videos</h3>
+        <p>These videos keep me motivated! Lessons from great minds push me to grow and improve.</p>
+        <a href="#videos" class="btn">Watch My Favorite Videos</a>
+    </div>
+    <div class="hobby">
+        <img src="assets/pics/jog.jpg" alt="Gym">
+        <h3>🏋️ Gym & Fitness</h3>
+        <p>Training helps me stay disciplined, build strength, and feel good physically and mentally.</p>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery-container">
+    <header>
+        <h1>📸 My Gallery</h1>
+        <p>A collection of memorable moments, projects, and experiences.</p>
+    </header>
+    <div class="gallery-item">
+        <img src="assets/pics/dev team.jpg" alt="Dev Team">
+        <p>🚀 Dev Team Collaboration</p>
+    </div>
+    <div class="gallery-item">
+        <img src="assets/pics/jog crew.jpg" alt="Project Work">
+        <p>jogging crew building muscles!</p>
+    </div>
+    <div class="gallery-item">
+        <img src="assets/pics/nature.jpg" alt="Tech Conference">
+        <p>beauty of nature brings peace.</p>
+    <div class="gallery-item">
+        <img src="assets/pics/jog.jpg" alt="Tech Conference">
+        <p>The tough gets going.</p>
+    </div>
+  </section>
+
+  <section id="certificates" class="certificates-container">
+    <h2>📜 My Certificates</h2>
+    <p>Here are some of the courses and programs I've completed through online learning:</p>
+
+    <div class="certificate-list">
+      <div class="certificate">
+        <h3>Diploma in Computer Science</h3>
+        <embed src="assets/certificates/Diploma in Computer Science.pdf" type="application/pdf" class="certificate-pdf" />
+        <a href="https://www.upskillist.com/certificate/en/TtS4ZGk8/2y5c2itn322u07qg2y5c2itlxvr0uafh" target="_blank" class="btn">🔗 View Credential</a>
+      </div>
+
+      <div class="certificate">
+        <h3>Fundamentals of Sustainability and Technology</h3>
+        <embed src="assets/certificates/Fundamentals of Sustainability and Technology.pdf" type="application/pdf" class="certificate-pdf" />
+        <a href="https://www.credly.com/badges/2ea4ae4c-fd83-42a5-8a55-4c31741353d7/linked_in_profile" target="_blank" class="btn">🔗 View Credential</a>
+      </div>
+
+      <div class="certificate">
+        <h3>Artificial Intelligence Fundamentals</h3>
+        <embed src="assets/certificates/Artificial Intelligence Fundamentals.pdf" type="application/pdf" class="certificate-pdf" />
+        <a href="https://www.credly.com/badges/7d20a321-ac15-4281-b6f0-de332c6f7870/linked_in_profile" target="_blank" class="btn">🔗 View Credential</a>
+      </div>
+
+      <div class="certificate">
+        <h3>Python for Data Science</h3>
+        <embed src="assets/certificates/Python for Data Science.pdf" type="application/pdf" class="certificate-pdf" />
+        <a href="https://courses.skillsbuild.skillsnetwork.site/certificates/c2ae00022e884988b87f05fa21eaf770" target="_blank" class="btn">🔗 View Credential</a>
+      </div>
+
+      <div class="certificate">
+        <h3>Data Fundamentals</h3>
+        <embed src="assets/certificates/Data Fundamentals.pdf" type="application/pdf" class="certificate-pdf" />
+        <a href="https://www.credly.com/badges/efef9cf8-164f-403d-940f-2d6b362770f9/linked_in_profile" target="_blank" class="btn">🔗 View Credential</a>
+      </div>
+
+      <div class="certificate">
+        <h3>Data Analysis Using Python</h3>
+        <embed src="assets/certificates/Data Analysis Using Python.pdf" type="application/pdf" class="certificate-pdf" />
+        <a href="https://www.credly.com/badges/23bcfc1f-9e86-45d5-bdc6-f3234aac3f8f/public_url" target="_blank" class="btn">🔗 View Credential</a>
+      </div>
+
+      <div class="certificate">
+        <h3>Data Visualization Using Python</h3>
+        <embed src="assets/certificates/Data Visualization Using Python.pdf" type="application/pdf" class="certificate-pdf" />
+        <a href="https://www.credly.com/badges/80afd3b1-171c-4a84-923d-9380b5a28169/public_url" target="_blank" class="btn">🔗 View Credential</a>
+      </div>
+
+      <div class="certificate">
+        <h3>Cybersecurity Fundamentals</h3>
+        <embed src="assets/certificates/Cybersecurity Fundamentals.pdf" type="application/pdf" class="certificate-pdf" />
+        <a href="https://www.credly.com/badges/c0ad28e2-122a-4907-b44f-ca5b2748e5c2/linked_in_profile" target="_blank" class="btn">🔗 View Credential</a>
+      </div>
+
+      <div class="certificate">
+        <h3>Explorations into Mindfulness</h3>
+        <embed src="assets/certificates/Explorations into Mindfulness.pdf" type="application/pdf" class="certificate-pdf" />
+        <a href="https://www.credly.com/badges/7ae4c17c-9c4a-4698-8bc9-1152ca9d15f5/public_url" target="_blank" class="btn">🔗 View Credential</a>
+      </div>
+
+      <div class="certificate">
+        <h3>Hadoop Foundations – Level 1</h3>
+        <embed src="assets/certificates/Hadoop Foundations - Level 1.pdf" type="application/pdf" class="certificate-pdf" />
+        <a href="https://www.credly.com/badges/559c4947-70d1-4727-b0a3-2a655ef7d18b/public_url" target="_blank" class="btn">🔗 View Credential</a>
+      </div>
+
+      <div class="certificate">
+        <h3>Fundamental Data Analysis using Power BI</h3>
+        <a href="https://alison.com/certification/check/9d96226108" target="_blank" class="btn">🔗 View Credential</a>
+      </div>
+
+      <div class="certificate">
+        <h3>FNB App Academy</h3>
+        <embed src="assets/certificates/FNB App Academy.pdf" type="application/pdf" class="certificate-pdf" />
+        <a href="https://appoftheyear.co.za/" target="_blank" class="btn">🔗 View Credential</a>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/gsap.min.js"></script>
+  <script>
+            // Bot widget close button logic
+            const closeBotBtn = document.getElementById('closeBotBtn');
+            closeBotBtn.addEventListener('click', () => {
+              botContainer.style.display = 'none';
+            });
+        // Bot widget show/hide logic
+        const botContainer = document.getElementById('botContainer');
+        const showBotBtn = document.getElementById('showBotBtn');
+        showBotBtn.addEventListener('click', () => {
+          if (botContainer.style.display === 'block') {
+            botContainer.style.display = 'none';
+          } else {
+            botContainer.style.display = 'block';
+          }
+        });
+    particlesJS('particles-js', {
+      "particles": {
+        "number": {
+          "value": 80,
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#00ff99"
+        },
+        "shape": {
+          "type": "circle",
+        },
+        "opacity": {
+          "value": 0.5,
+          "random": false,
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00ff99",
+          "opacity": 0.4,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 6,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "repulse"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "repulse": {
+            "distance": 100,
+            "duration": 0.4
+          },
+          "push": {
+            "particles_nb": 4
+          }
+        }
+      },
+      "retina_detect": true
     });
 
-    closeBotBtn.addEventListener("click", () => {
-      botContainer.classList.remove("bot-visible");
+    gsap.from(".hero h1", { duration: 1, y: -50, opacity: 0, ease: "power4.out" });
+    gsap.from(".hero p", { duration: 1, y: -30, opacity: 0, ease: "power4.out", delay: 0.5 });
+    gsap.from(".hero nav a", { duration: 1, y: -20, opacity: 0, ease: "power4.out", delay: 1, stagger: 0.2 });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('section');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
     });
   </script>
-
-  <script src="script.js"></script>
 </body>
 </html>
