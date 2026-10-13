@@ -259,18 +259,252 @@ blockquote {
     margin-block: 4px;
 }
 
-#projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-    gap: 20px;
-    background: var(--bg);
+#projects,
+#more-projects {
+    display: block;
+    padding: 56px 0 32px;
+    background: transparent;
     border: 0;
-    padding-inline: 0;
 }
 
-#projects > h1 {
+.project-catalog-page {
+    width: min(var(--content-width), calc(100% - 40px));
+    margin-inline: auto;
+}
+
+.project-catalog-intro {
+    padding: 48px 0 16px;
+}
+
+.project-catalog-intro .eyebrow,
+.project-section-heading .eyebrow,
+.ai-engineering-highlight .eyebrow {
+    margin: 0 0 8px;
+    color: var(--accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.project-catalog-intro h1 {
+    margin: 0 0 12px;
+}
+
+.project-catalog-intro > p:last-child,
+.project-section-heading > p:last-child {
+    max-width: 680px;
+    margin: 0;
+}
+
+.project-section-heading {
+    margin-bottom: 24px;
+}
+
+.project-section-heading h2 {
+    margin: 0 0 8px;
+}
+
+.project-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 315px), 1fr));
+    align-items: stretch;
+    gap: 20px;
+}
+
+.featured-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-card {
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.project-card:hover {
+    transform: translateY(-3px);
+    border-color: #b7c9f5;
+}
+
+.project-card[hidden] {
+    display: none;
+}
+
+.project-card-preview {
+    display: block;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--bg-soft);
+}
+
+.project-card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-card-content {
+    flex: 1;
+    padding: 24px;
+}
+
+.project-category-list,
+.project-tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 14px;
+    padding: 0;
+    list-style: none;
+}
+
+.project-category,
+.project-tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 3px 10px;
+    color: #294d99;
+    background: #edf3ff;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+.project-tag {
+    color: var(--text-muted);
+    background: var(--bg-soft);
+    font-weight: 500;
+}
+
+.project-card-title {
+    margin: 0 0 10px;
+    font-size: 1.25rem;
+}
+
+.project-card-description,
+.project-card-problem,
+.project-aliases,
+.project-status-note {
+    margin: 0 0 14px;
+    color: var(--text-muted);
+}
+
+.project-aliases {
+    font-size: 0.86rem;
+}
+
+.project-card-problem strong {
+    color: var(--text);
+}
+
+.project-card-detail {
+    margin-top: 18px;
+}
+
+.project-card-detail h4 {
+    margin: 0 0 8px;
+    font-size: 0.93rem;
+}
+
+.project-card-detail ul:not(.project-tag-list) {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.project-card-detail li {
+    margin: 5px 0;
+    font-size: 0.92rem;
+}
+
+.project-card-detail .project-tag-list {
+    margin-bottom: 0;
+}
+
+.project-status-note {
+    margin-top: 18px;
+    padding: 10px 12px;
+    color: #704b12;
+    background: #fff8e8;
+    border-left: 3px solid #e7b34d;
+    border-radius: 4px;
+    font-size: 0.88rem;
+}
+
+.project-card-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.project-card-actions .btn {
+    width: auto;
+    margin: 0;
+}
+
+.ai-engineering-highlight {
+    margin-top: 24px;
+    padding: 28px;
+    background: linear-gradient(135deg, #f1f5ff, #f8faff);
+    border: 1px solid #dce6fb;
+    border-radius: var(--radius);
+}
+
+.ai-engineering-highlight h3 {
+    margin: 0 0 10px;
+    font-size: 1.35rem;
+}
+
+.ai-engineering-highlight p:not(.eyebrow) {
+    max-width: 780px;
+    margin: 0 0 14px;
+}
+
+.text-link {
+    font-weight: 700;
+}
+
+.project-filter-controls {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(190px, 1fr);
+    gap: 12px 16px;
+    align-items: end;
+    margin: 0 0 22px;
+}
+
+.project-filter-controls label {
+    display: grid;
+    gap: 6px;
+    color: var(--text);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.project-filter-controls input,
+.project-filter-controls select {
+    width: 100%;
+    min-height: 46px;
+    padding: 9px 12px;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font: inherit;
+}
+
+.project-result-count {
     grid-column: 1 / -1;
     margin: 0;
+    font-size: 0.88rem;
 }
 
 .project-grid,
@@ -586,6 +820,41 @@ footer {
     cursor: pointer;
 }
 
+@media (min-width: 761px) and (max-width: 920px) {
+    .navigation {
+        min-height: 0;
+        flex-wrap: wrap;
+        gap: 2px 14px;
+        padding-block: 8px 6px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x proximity;
+        scrollbar-width: thin;
+        scrollbar-color: #cbd5e1 transparent;
+        padding: 0 2px 4px;
+        gap: 8px 18px;
+    }
+
+    .nav-links a {
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+    }
+
+    .navigation > .btn {
+        width: auto;
+        margin-left: auto;
+        min-height: 44px;
+        padding-inline: 14px;
+    }
+}
+
 @media (max-width: 760px) {
     :root {
         --section-space: 42px;
@@ -705,8 +974,20 @@ footer {
         padding-block: 28px;
     }
 
-    #projects > h1 {
-        font-size: 1.9rem;
+    #more-projects {
+        padding-block: 28px;
+    }
+
+    .featured-project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-filter-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .project-result-count {
+        grid-column: auto;
     }
 
     body > .btn:last-child {

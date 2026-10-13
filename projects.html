@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="facebook-domain-verification" content="nhlbg3bgz79avs6nbsbtv04mlb3hhd" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Velaphi</title>
+    <meta name="description" content="Explore Velaphi Nkosi's featured work, research, productivity tools, and data-analysis projects.">
+    <title>Projects | Velaphi Nkosi</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -14,6 +14,7 @@
             <div class="nav-links">
                 <a href="index.html#about">My Journey</a>
                 <a href="index.html#projects">Projects</a>
+                <a href="#more-projects">Experiments</a>
                 <a href="index.html#books">Learning</a>
                 <a href="index.html#hobbies">Beyond Work</a>
                 <a href="index.html#contact">Contact</a>
@@ -21,61 +22,57 @@
             <a class="btn" href="assets/Velaphi-CV.pdf" download>Download CV</a>
         </nav>
     </header>
-    <header>
-        <h1>My Projects</h1>
-    </header>
-         <section class="project">
-        <h2>Applynova</h2>
-        <p>A platform that automates the process of applying for jobs via email.</p>
-        <a href="https://applynova.co.za/" class="btn">View website</a>
-        <a href="https://youtu.be/h1FfQX8uRi4?si=gEgkkU5rlyiD3HE4" class="btn">View video</a>
-        <a href="https://drive.google.com/file/d/1UDmhem3mSDRR67kasCZqRVmBucrjMQHT/view?usp=sharing" class="btn">Listen to Ai podscast discussion of applynova</a>
-    </section>
 
-    <section class="project">
-        <h2>Bitcoin Predicting Model</h2>
-        <p>A machine learning model predicting Bitcoin price fluctuations.</p>
-        <a href="https://bb-kn4h.onrender.com" class="btn">View Project</a>
-    </section>
+    <main class="project-catalog-page">
+        <header class="project-catalog-intro">
+            <p class="eyebrow">Selected work &amp; experiments</p>
+            <h1>Projects</h1>
+            <p>A closer look at my featured products, research, and hands-on explorations.</p>
+        </header>
 
-    <section class="project">
-        <h2>Queue Management System</h2>
-        <p>Developed a queue management system using data analysis to improve service delivery and operational efficiency.</p>
-        <p>Automated tasks using Python and deployed on Render.</p>
-        <a href="https://wcco.onrender.com" class="btn">View Project</a>
-    </section>
+        <section id="projects" class="portfolio-project-section">
+            <header class="project-section-heading">
+                <p class="eyebrow">Selected work</p>
+                <h2>Flagship Projects</h2>
+                <p>Projects that best represent my work in product engineering and applied research.</p>
+            </header>
+            <div id="featuredProjectGrid" class="project-card-grid featured-project-grid"></div>
+            <aside class="ai-engineering-highlight" aria-labelledby="ai-engineering-heading">
+                <p class="eyebrow">AI engineering &amp; applied analytics</p>
+                <h3 id="ai-engineering-heading">Turn raw data into useful next steps</h3>
+                <p>The data-analysis application combines dataset profiling, rule-based quality suggestions, charting, and correlation and outlier exploration. Its optional Ollama narration runs locally and is unavailable on the hosted Render deployment.</p>
+                <a class="text-link" href="#project-data-analysis">Explore the data-analysis project <span aria-hidden="true">→</span></a>
+            </aside>
+        </section>
 
-    <section class="project">
-        <h2>DataClean Pro</h2>
-        <p>Clean, analyze, and visualize data effortlessly with AI-powered insights.</p>
-        <a href="https://streamlit-data-analysis.onrender.com" class="btn">View Project</a>
-    </section>
+        <section id="more-projects" class="portfolio-project-section">
+            <header class="project-section-heading">
+                <p class="eyebrow">More to explore</p>
+                <h2>More Projects &amp; Experiments</h2>
+                <p>Productivity tools, research prototypes, data applications, and other experiments.</p>
+            </header>
+            <div class="project-filter-controls">
+                <label>
+                    <span>Search projects</span>
+                    <input id="projectSearch" type="search" placeholder="Try a title, feature, or technology" autocomplete="off">
+                </label>
+                <label>
+                    <span>Category</span>
+                    <select id="projectCategory">
+                        <option value="all">All categories</option>
+                    </select>
+                </label>
+                <p id="projectResultCount" class="project-result-count" aria-live="polite"></p>
+            </div>
+            <div id="moreProjectGrid" class="project-card-grid"></div>
+        </section>
+    </main>
 
-    <section class="project">
-        <h2>Word of the Day App</h2>
-        <p>A simple app that fetches and displays a new word daily to enhance vocabulary.</p>
-        <a href="https://word-of-the-day-vclq.onrender.com" class="btn">View Project</a>
-    </section>
+    <footer>
+        <a class="btn btn-secondary" href="index.html">Back to portfolio</a>
+    </footer>
 
-    <section class="project">
-        <h2>Productivity-Tracker</h2>
-        <p>A task management web app built for better productivity.</p>
-        <a href="https://productivity-tracker-vd37.onrender.com" class="btn">View Project</a>
-    </section>
-
-      <section class="project">
-        <h2>Microsoft Power Apps Challenge</h2>
-        <p>Used Power Automate, Canvas, Model-Driven, Power BI integration</p>
-        <a href="https://drive.google.com/file/d/1J78myXCEjj-ie93XdTxFwZEPkCZ8CbZ6/view?usp=drive_link" class="btn">View video</a>
-    </section>
-
-     <section class="project">
-        <h2>My Trading Bot</h2>
-        <p>A trading bot built using various algorithms and strategies.</p>
-        <a href="https://drive.google.com/file/d/1n2D2P3f2QtFsJfFnELCra5xfkNW5VJ4y/view?usp=sharing" class="btn">View video</a>
-    </section>
-
-     <br>
-    <a href="index.html" class="btn"> back</a>
+    <script src="project-data.js" defer></script>
+    <script src="projects.js" defer></script>
 </body>
 </html>
